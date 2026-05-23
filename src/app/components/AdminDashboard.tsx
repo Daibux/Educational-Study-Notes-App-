@@ -37,12 +37,28 @@ const ADMIN_STATS = [
 ];
 
 const PRODUCTS = [
-  { id: 1, title: "Adv. Reinforced Concrete Design", type: "PDF", price: "₱450.00", sales: 124, revenue: "₱55,800", status: "Active" },
-  { id: 2, title: "Soil Mechanics Lab 4 Video", type: "Video", price: "₱250.00", sales: 85, revenue: "₱21,250", status: "Active" },
-  { id: 3, title: "Transportation Eng. Midterm Key", type: "PDF", price: "₱150.00", sales: 210, revenue: "₱31,500", status: "Active" },
-  { id: 4, title: "Hydrology Basics Bundle", type: "Bundle", price: "₱850.00", sales: 42, revenue: "₱35,700", status: "Draft" },
-  { id: 5, title: "Structural Analysis Reviewer", type: "PDF", price: "₱300.00", sales: 156, revenue: "₱46,800", status: "Active" },
-  { id: 6, title: "Construction Management Intro", type: "Video", price: "₱500.00", sales: 23, revenue: "₱11,500", status: "Review" },
+  { id: 1, title: "Adv. Reinforced Concrete Design", type: "Bundle", price: "₱49.00", sales: 124, revenue: "₱6,076", status: "Active", author: "Engr. John Doe" },
+  { id: 2, title: "Soil Mechanics Lab 4", type: "Bundle", price: "₱49.00", sales: 85, revenue: "₱4,165", status: "Active", author: "Engr. John Doe" },
+  { id: 3, title: "Transportation Eng. Midterm Key", type: "Bundle", price: "₱49.00", sales: 210, revenue: "₱10,290", status: "Active", author: "Engr. John Doe" },
+  { id: 4, title: "Hydrology Basics Bundle", type: "Bundle", price: "₱49.00", sales: 42, revenue: "₱2,058", status: "Draft", author: "Engr. John Doe" },
+  { id: 5, title: "Structural Analysis Reviewer", type: "Bundle", price: "₱49.00", sales: 156, revenue: "₱7,644", status: "Active", author: "Engr. John Doe" },
+  { id: 6, title: "Construction Management Intro", type: "Bundle", price: "₱49.00", sales: 123, revenue: "₱6,027", status: "Review", author: "Engr. John Doe" },
+  { id: 7, title: "Chemistry for Engineers", type: "Bundle", price: "₱49.00", sales: 223, revenue: "₱10,927", status: "Review", author: "Prof. Maria S." },
+  { id: 8, title: "Physics for Engineers", type: "Bundle", price: "₱49.00", sales: 13, revenue: "₱637", status: "Active", author: "Prof. Maria S." },
+  { id: 9, title: "Calculus 1", type: "Bundle", price: "₱49.00", sales: 213, revenue: "₱10,437", status: "Active", author: "Dr. Reyes" },
+  { id: 10, title: "Calculus 2", type: "Bundle", price: "₱49.00", sales: 214, revenue: "₱10,486", status: "Active", author: "Dr. Reyes" },
+  { id: 12, title: "Differential Equations", type: "Bundle", price: "₱49.00", sales: 53, revenue: "₱2,597", status: "Review", author: "Dr. Reyes" },
+  { id: 13, title: "Engineering Data Analysis", type: "Bundle", price: "₱49.00", sales: 76, revenue: "₱3,724", status: "Active", author: "Engr. John Doe" },
+  { id: 14, title: "Dynamics of Rigid Bodies", type: "Bundle", price: "₱49.00", sales: 83, revenue: "₱4,067", status: "Review", author: "Engr. John Doe" },
+  { id: 15, title: "Mechanics of Deformable Bodies", type: "Bundle", price: "₱49.00", sales: 23, revenue: "₱1,127", status: "Active", author: "Engr. John Doe" },
+  { id: 16, title: "Numerical Solutions to CE Problems", type: "Bundle", price: "₱49.00", sales: 33, revenue: "₱1,617", status: "Review", author: "Engr. John Doe" },
+  { id: 17, title: "Theory of Structures", type: "Bundle", price: "₱49.00", sales: 23, revenue: "₱1,127", status: "Review", author: "Engr. John Doe" },
+  { id: 18, title: "Highway and Railroad Engineering", type: "Bundle", price: "₱49.00", sales: 67, revenue: "₱3,283", status: "Review", author: "Engr. John Doe" },
+  { id: 19, title: "Engineering Management", type: "Bundle", price: "₱49.00", sales: 56, revenue: "₱2,744", status: "Active", author: "Prof. Maria S." },
+  { id: 20, title: "Principles Of Steel Design Technical", type: "Bundle", price: "₱49.00", sales: 82, revenue: "₱4,018", status: "Active", author: "Engr. John Doe" },
+  { id: 21, title: "Principles Of Reinforced And Presterssed Concrete", type: "Bundle", price: "₱49.00", sales: 62, revenue: "₱3,038", status: "Review", author: "Engr. John Doe" },
+  { id: 22, title: "Hydraulics", type: "Bundle", price: "₱49.00", sales: 61, revenue: "₱2,989", status: "Review", author: "Engr. John Doe" },
+  { id: 23, title: "Quantity Surveying", type: "Bundle", price: "₱49.00", sales: 89, revenue: "₱4,361", status: "Review", author: "Engr. John Doe" }
 ];
 
 const RECENT_TRANSACTIONS = [
@@ -154,7 +170,7 @@ export const AdminDashboard = () => {
                     <thead className="bg-slate-50 text-slate-900 font-semibold uppercase text-xs">
                       <tr>
                         <th className="px-6 py-4">Title</th>
-                        <th className="px-6 py-4">Author</th>
+                        <th className="px-6 py-4">Type</th>
                         <th className="px-6 py-4">Price</th>
                         <th className="px-6 py-4">Sales</th>
                         <th className="px-6 py-4 text-right">Actions</th>
@@ -274,12 +290,13 @@ export const AdminDashboard = () => {
                 <table className="w-full text-left text-sm text-slate-600">
                   <thead className="bg-slate-50 text-slate-900 font-semibold uppercase text-xs">
                     <tr>
-                      <th className="px-6 py-4">Product</th>
-                      <th className="px-6 py-4">Price</th>
-                      <th className="px-6 py-4">Sales</th>
-                      <th className="px-6 py-4">Total Revenue</th>
-                      <th className="px-6 py-4">Status</th>
-                      <th className="px-6 py-4 text-right">Actions</th>
+                    <th className="px-6 py-4">Product</th>
+                    <th className="px-6 py-4">Price</th>
+                    <th className="px-6 py-4">Sales</th>
+                    <th className="px-6 py-4">Total Revenue</th>
+                    <th className="px-6 py-4">Author</th> 
+                    <th className="px-6 py-4">Status</th> 
+                    <th className="px-6 py-4 text-right">Actions</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
@@ -301,6 +318,7 @@ export const AdminDashboard = () => {
                         <td className="px-6 py-4 font-medium text-slate-900">{item.price}</td>
                         <td className="px-6 py-4">{item.sales} sold</td>
                         <td className="px-6 py-4 font-bold text-emerald-600">{item.revenue}</td>
+                        <td className="px-6 py-4 font-medium text-slate-900">{item.author}</td>
                         <td className="px-6 py-4">
                            <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold ${
                              item.status === 'Active' ? 'bg-emerald-100 text-emerald-700' :

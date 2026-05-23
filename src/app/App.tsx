@@ -57,16 +57,16 @@ const Navbar = ({
           <img src={LOGO_URL} alt="DPL CiviNotes" className="h-14 w-auto" />
         </div>
         
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center gap-2">
           {!isLoggedIn ? (
             <>
-              <a href="#topics" className="text-slate-600 hover:text-blue-600 font-medium transition-colors">Topics</a>
-              <a href="#resources" className="text-slate-600 hover:text-blue-600 font-medium transition-colors">Resources</a>
-              <a href="#about" className="text-slate-600 hover:text-blue-600 font-medium transition-colors">About Us</a>
+              <a href="#topics" className="text-slate-600 hover:bg-blue-700 hover:text-white font-medium transition-colors px-4 py-2 rounded-lg">Topics</a>
+              <a href="#resources" className="text-slate-600 hover:bg-blue-700 hover:text-white font-medium transition-colors px-4 py-2 rounded-lg">Resources</a>
+              <a href="#about" className="text-slate-600 hover:bg-blue-700 hover:text-white font-medium transition-colors px-4 py-2 rounded-lg">About Us</a>
               <div className="flex items-center space-x-2">
                 <button 
                   onClick={() => onLogin('student')}
-                  className="text-slate-600 hover:text-blue-600 font-medium px-3 py-2"
+                  className="text-slate-600 hover:bg-blue-700 hover:text-white font-medium transition-colors px-4 py-2 rounded-lg"
                 >
                   Log in
                 </button>
