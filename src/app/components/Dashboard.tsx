@@ -68,8 +68,8 @@ const FOLDER_CONTENTS: Record<string, any[]> = {
     { id: 3, title: "Fluid Properties", tags: ["Viscosity", "Pressure"] },
   ],
   cart: [
-    { id: 1, title: "Advanced Hydraulics", price: "₱450", type: "Notes", author: "Dr. Roberts" },
-    { id: 2, title: "Structural Analysis II Series", price: "₱350", type: "Video Course", author: "Engr. James" },
+    { id: 1, title: "Advanced Hydraulics", price: "₱49", type: "Notes", author: "Dr. Roberts" },
+    { id: 2, title: "Structural Analysis II Series", price: "₱49", type: "Video Course", author: "Engr. James" },
   ]
 };
 
@@ -449,7 +449,7 @@ export const Dashboard = () => {
                             <div className="p-2 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors">
                               <BookOpen className="h-5 w-5 text-blue-600" />
                             </div>
-                            <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-bold">₱450</span>
+                            <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-bold">₱49</span>
                           </div>
                           <h3 className="font-bold text-slate-900 mb-1">Advanced Hydraulics</h3>
                           <p className="text-sm text-slate-500 mb-3">Master open channel flow concepts.</p>
@@ -466,7 +466,7 @@ export const Dashboard = () => {
                             <div className="p-2 bg-white rounded-lg shadow-sm group-hover:bg-amber-50 group-hover:text-amber-600 transition-colors">
                               <PlayCircle className="h-5 w-5 text-amber-500" />
                             </div>
-                            <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-bold">₱350</span>
+                            <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-bold">₱49</span>
                           </div>
                           <h3 className="font-bold text-slate-900 mb-1">Structural Analysis II</h3>
                           <p className="text-sm text-slate-500 mb-3">Video series on indeterminate structures.</p>

@@ -62,9 +62,9 @@ const PRODUCTS = [
 ];
 
 const RECENT_TRANSACTIONS = [
-  { id: 1, customer: "Alex Student", item: "Adv. Reinforced Concrete Design", amount: "₱450.00", time: "2 mins ago" },
-  { id: 2, customer: "Maria Garcia", item: "Transportation Eng. Key", amount: "₱150.00", time: "15 mins ago" },
-  { id: 3, customer: "John Doe", item: "Soil Mechanics Lab", amount: "₱250.00", time: "1 hour ago" },
+  { id: 1, customer: "Alex Student", item: "Adv. Reinforced Concrete Design", amount: "₱49.00", time: "2 mins ago" },
+  { id: 2, customer: "Maria Garcia", item: "Transportation Eng. Key", amount: "₱49.00", time: "15 mins ago" },
+  { id: 3, customer: "John Doe", item: "Soil Mechanics Lab", amount: "₱49.00", time: "1 hour ago" },
 ];
 
 const CUSTOMER_LIST = [

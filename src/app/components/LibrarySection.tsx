@@ -7,8 +7,8 @@ const HERO_IMAGE = "https://images.unsplash.com/photo-1714661116916-8e44405d0c83
 const BLUEPRINTS_IMAGE = "https://images.unsplash.com/photo-1758574697284-8e84046a45ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaXZpbCUyMGVuZ2luZWVyaW5nJTIwYmx1ZXByaW50c3xlbnwxfHx8fDE3NzA2NDQxMDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const STUDENTS_IMAGE = "https://images.unsplash.com/photo-1718327453695-4d32b94c90a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwc3R1ZGVudHMlMjBzdHVkeWluZyUyMGxpYnJhcnl8ZW58MXx8fHwxNzcwNjE5NzEzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const ENGINEER_IMAGE = "https://images.unsplash.com/photo-1694522362256-6c907336af43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwZW5naW5lZXIlMjBoZWxtZXR8ZW58MXx8fHwxNzcwNjQ0MTAzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const CONCRETE_IMAGE = "https://images.unsplash.com/photo-1518385731751-2292a83236e7?auto=format&fit=crop&q=80&w=1080";
-const FLUIDS_IMAGE = "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=1080";
+const CONCRETE_IMAGE = "https://images.unsplash.com/photo-1559763194-521eef49b386?q=80&w=1269&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+const FLUIDS_IMAGE = "https://images.unsplash.com/photo-1667372525822-d226d23018dc?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 // Categories for tabs
 const CATEGORIES = ["All", "Structural", "Geotechnical", "Fluid Mechanics", "Transportation", "Construction"];
@@ -24,7 +24,7 @@ const MOCK_RESOURCES = [
     readTime: "15 min read",
     image: BLUEPRINTS_IMAGE,
     description: "A comprehensive guide to calculating and plotting SFD and BMD for determinate beams.",
-    price: 450,
+    price: 49,
     purchased: false
   },
   {
@@ -36,7 +36,7 @@ const MOCK_RESOURCES = [
     readTime: "20 min read",
     image: ENGINEER_IMAGE,
     description: "Deep dive into USCS and AASHTO soil classification methods with practical examples.",
-    price: 350,
+    price: 49,
     purchased: true
   },
   {
@@ -48,7 +48,7 @@ const MOCK_RESOURCES = [
     readTime: "12 min read",
     image: FLUIDS_IMAGE,
     description: "Exploring fluid dynamics and how Bernoulli's equation applies to pipe flow and open channels.",
-    price: 280,
+    price: 49,
     purchased: false
   },
   {
@@ -60,7 +60,7 @@ const MOCK_RESOURCES = [
     readTime: "25 min read",
     image: CONCRETE_IMAGE,
     description: "Step-by-step procedure for designing singly and doubly reinforced concrete beams.",
-    price: 550,
+    price:49,
     purchased: false
   },
   {
@@ -84,7 +84,7 @@ const MOCK_RESOURCES = [
     readTime: "22 min read",
     image: STUDENTS_IMAGE,
     description: "Mastering the Critical Path Method (CPM) for effective project management and timeline estimation.",
-    price: 320,
+    price: 49,
     purchased: false
   },
   {
@@ -96,7 +96,7 @@ const MOCK_RESOURCES = [
     readTime: "16 min read",
     image: BLUEPRINTS_IMAGE,
     description: "Comparative analysis of truss solving techniques to help you choose the most efficient method.",
-    price: 250,
+    price: 49,
     purchased: false
   },
   {

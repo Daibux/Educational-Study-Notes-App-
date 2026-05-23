@@ -21,7 +21,7 @@ import {
 import { LibrarySection } from './components/LibrarySection';
 import { Dashboard } from './components/Dashboard';
 import { AdminDashboard } from './components/AdminDashboard';
-
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 // Images
 const HERO_IMAGE = "https://images.unsplash.com/photo-1714661116916-8e44405d0c83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBicmlkZ2UlMjBhcmNoaXRlY3R1cmV8ZW58MXx8fHwxNzcwNjQ0MTAzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const STUDENTS_IMAGE = "https://images.unsplash.com/photo-1718327453695-4d32b94c90a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwc3R1ZGVudHMlMjBzdHVkeWluZyUyMGxpYnJhcnl8ZW58MXx8fHwxNzcwNjE5NzEzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
@@ -532,34 +532,78 @@ const Footer = () => (
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userRole, setUserRole] = useState<'student' | 'admin'>('student');
-  const [currentPage, setCurrentPage] = useState('dashboard');
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const path = location.pathname;
+
+  const isLoggedIn =
+    path === "/dashboard" ||
+    path === "/library" ||
+    path === "/groups" ||
+    path === "/admin";
+
+  const userRole: 'student' | 'admin' =
+    path === "/admin" ? "admin" : "student";
+
+  const currentPage =
+    path === "/library"
+      ? "library"
+      : path === "/groups"
+      ? "groups"
+      : path === "/admin"
+      ? "admin-dashboard"
+      : "dashboard";
 
   const handleLogin = (role: 'student' | 'admin' = 'student') => {
-    setIsLoggedIn(true);
-    setUserRole(role);
-    setCurrentPage(role === 'admin' ? 'admin-dashboard' : 'dashboard');
+    if (role === 'admin') {
+      navigate('/admin');
+    } else {
+      navigate('/dashboard');
+    }
+
     window.scrollTo(0, 0);
   };
 
   const handleLogout = () => {
-    setIsLoggedIn(false);
-    setUserRole('student');
-    setCurrentPage('dashboard');
+    navigate('/');
     window.scrollTo(0, 0);
   };
 
   const handleNavigate = (page: string) => {
-    setCurrentPage(page);
+    switch (page) {
+      case 'dashboard':
+        navigate('/dashboard');
+        break;
+
+      case 'library':
+        navigate('/library');
+        break;
+
+      case 'groups':
+        navigate('/groups');
+        break;
+
+      case 'admin-dashboard':
+      case 'admin-content':
+      case 'admin-users':
+        navigate('/admin');
+        break;
+
+      default:
+        navigate('/');
+    }
+
     window.scrollTo(0, 0);
   };
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
-      <Navbar 
-        mobileMenuOpen={mobileMenuOpen} 
-        setMobileMenuOpen={setMobileMenuOpen} 
+
+      <Navbar
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
         isLoggedIn={isLoggedIn}
         userRole={userRole}
         onLogin={handleLogin}
@@ -567,55 +611,78 @@ export default function App() {
         currentPage={currentPage}
         onNavigate={handleNavigate}
       />
-      <main>
-        {isLoggedIn ? (
-          <>
-            {userRole === 'student' && (
-              <>
-                {currentPage === 'dashboard' && <Dashboard />}
-                {currentPage === 'library' && (
-                  <div className="pt-24 min-h-screen">
-                    <LibrarySection />
-                  </div>
-                )}
-                {currentPage === 'groups' && (
-                  <div className="pt-32 pb-20 min-h-screen flex flex-col items-center justify-center text-center px-4">
-                    <div className="bg-slate-50 p-6 rounded-full mb-6">
-                      <Users className="h-16 w-16 text-blue-600" />
-                    </div>
-                    <h2 className="text-3xl font-bold text-slate-900 mb-2">Study Groups</h2>
-                    <p className="text-slate-600 max-w-md">
-                      Join a community of students to discuss topics and prepare for exams together. This feature is coming soon!
-                    </p>
-                    <button 
-                      onClick={() => handleNavigate('dashboard')}
-                      className="mt-8 text-blue-600 font-medium hover:underline"
-                    >
-                      Return to Dashboard
-                    </button>
-                  </div>
-                )}
-              </>
-            )}
 
-            {userRole === 'admin' && (
-              <>
-                {(currentPage === 'admin-dashboard' || currentPage === 'admin-content' || currentPage === 'admin-users') && (
-                  <AdminDashboard />
-                )}
-              </>
-            )}
-          </>
-        ) : (
-          <>
-            <Hero onGetStarted={() => handleLogin('student')} onAdminLogin={() => handleLogin('admin')} />
-            <Features />
-            <Topics />
-            <LibrarySection />
-            <About />
-          </>
-        )}
-      </main>
+      <Routes>
+
+        {/* Landing Page */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero
+                onGetStarted={() => handleLogin('student')}
+                onAdminLogin={() => handleLogin('admin')}
+              />
+
+              <Features />
+              <Topics />
+              <LibrarySection />
+              <About />
+            </>
+          }
+        />
+
+        {/* Student Dashboard */}
+        <Route
+          path="/dashboard"
+          element={<Dashboard />}
+        />
+
+        {/* Library */}
+        <Route
+          path="/library"
+          element={
+            <div className="pt-24 min-h-screen">
+              <LibrarySection />
+            </div>
+          }
+        />
+
+        {/* Groups */}
+        <Route
+          path="/groups"
+          element={
+            <div className="pt-32 pb-20 min-h-screen flex flex-col items-center justify-center text-center px-4">
+              <div className="bg-slate-50 p-6 rounded-full mb-6">
+                <Users className="h-16 w-16 text-blue-600" />
+              </div>
+
+              <h2 className="text-3xl font-bold text-slate-900 mb-2">
+                Study Groups
+              </h2>
+
+              <p className="text-slate-600 max-w-md">
+                Join a community of students to discuss topics and prepare for exams together. This feature is coming soon!
+              </p>
+
+              <button
+                onClick={() => handleNavigate('dashboard')}
+                className="mt-8 text-blue-600 font-medium hover:underline"
+              >
+                Return to Dashboard
+              </button>
+            </div>
+          }
+        />
+
+        {/* Admin Dashboard */}
+        <Route
+          path="/admin"
+          element={<AdminDashboard />}
+        />
+
+      </Routes>
+
       <Footer />
     </div>
   );
