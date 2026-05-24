@@ -46,7 +46,7 @@ const Navbar = ({
   onLogout: () => void;
   currentPage: string;
   onNavigate: (page: string) => void;
-  navigate= any;
+  navigate: any;
 }) => (
   <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
