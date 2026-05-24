@@ -577,6 +577,22 @@ export const Dashboard = () => {
                         </button>
                       )}
                     </div>
+                     <div>
+                      <button
+                        style={{
+                          backgroundColor: "#2563eb",
+                          color: "white",
+                          padding: "12px 24px",
+                          border: "none",
+                          borderRadius: "10px",
+                          fontSize: "16px",
+                          fontWeight: 600,
+                          cursor: "pointer",
+                          width: "100%",
+                        }}
+                      >
+                        Apply as Contributor
+                      </button>
                   </div>
                 </div>
               </>
