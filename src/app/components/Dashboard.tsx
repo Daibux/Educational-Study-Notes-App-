@@ -567,34 +567,35 @@ export const Dashboard = () => {
                             <ChevronRight className="h-4 w-4 text-slate-300 group-hover:text-slate-500" />
                           </div>
                         ))}
-                      </div>
-                      {MOCK_FAVORITES.length > 4 && (
-                        <button 
-                          onClick={() => setShowAllSaved(!showAllSaved)}
-                          className="w-full mt-4 py-2 text-blue-600 text-sm font-medium hover:bg-blue-50 rounded-lg transition-colors"
-                        >
-                          {showAllSaved ? "Show Less" : "View All Saved"}
-                        </button>
-                      )}
-                    </div>
-                     <div>
-                      <button
-                        style={{
-                          backgroundColor: "#2563eb",
-                          color: "white",
-                          padding: "12px 24px",
-                          border: "none",
-                          borderRadius: "10px",
-                          fontSize: "16px",
-                          fontWeight: 600,
-                          cursor: "pointer",
-                          width: "100%",
-                        }}
-                      >
-                        Apply as Contributor
-                      </button>
-                  </div>
-                </div>
+                     </div>
+
+              {MOCK_FAVORITES.length > 4 && (
+                <button 
+                  onClick={() => setShowAllSaved(!showAllSaved)}
+                  className="w-full mt-4 py-2 text-blue-600 text-sm font-medium hover:bg-blue-50 rounded-lg transition-colors"
+                >
+                  {showAllSaved ? "Show Less" : "View All Saved"}
+                </button>
+              )}
+              
+              <div className="w-full mt-4">
+                <button
+                  style={{
+                    backgroundColor: "#2563eb",
+                    color: "white",
+                    padding: "14px 24px",
+                    border: "none",
+                    borderRadius: "12px",
+                    fontSize: "17px",
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    width: "100%",
+                  }}
+                >
+                  Apply as Contributor
+                </button>
+              </div>
+              </div>
               </>
             )}
 
