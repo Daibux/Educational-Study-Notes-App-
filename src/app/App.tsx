@@ -164,6 +164,13 @@ const Navbar = ({
                     {userRole === 'admin' ? 'Admin' : 'Louviepan'}
                   </span>
                 </div>
+                  <button 
+                  onClick={onLogout}
+                  className="text-slate-400 hover:text-slate-600"
+                  title="Logout"
+                >
+                  <LogOut className="h-5 w-5" />
+                </button>
               </div>
             </>
           )}
