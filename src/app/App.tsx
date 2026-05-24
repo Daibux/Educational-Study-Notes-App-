@@ -76,13 +76,6 @@ const Navbar = ({
                 >
                   Get Started
                 </button>
-                <div className="w-px h-8 bg-slate-200 mx-2"></div>
-                <button 
-                  onClick={() => onLogin('admin')}
-                  className="text-slate-500 hover:text-slate-800 text-sm font-medium flex items-center gap-1"
-                >
-                  <ShieldCheck className="h-4 w-4" /> Admin
-                </button>
               </div>
             </>
           ) : (
@@ -273,12 +266,6 @@ const Navbar = ({
                   </div>
                   <span className="font-medium text-slate-700">{userRole === 'admin' ? 'Administrator' : 'Louviepan'}</span>
                 </div>
-                <button 
-                  onClick={() => { onLogout(); setMobileMenuOpen(false); }}
-                  className="w-full text-left px-3 py-2 text-red-600 font-medium flex items-center gap-2"
-                >
-                  <LogOut className="h-4 w-4" /> Sign Out
-                </button>
               </div>
             </>
           )}
