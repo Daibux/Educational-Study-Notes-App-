@@ -60,9 +60,47 @@ const Navbar = ({
         <div className="hidden md:flex items-center gap-2">
           {!isLoggedIn ? (
             <>
-              <a href="/#topics" className="text-slate-600 hover:bg-blue-700 hover:text-white font-medium transition-colors px-4 py-2 rounded-lg">Topics</a>
-              <a href="/#resources" className="text-slate-600 hover:bg-blue-700 hover:text-white font-medium transition-colors px-4 py-2 rounded-lg">Resources</a>
-              <a href="/#about" className="text-slate-600 hover:bg-blue-700 hover:text-white font-medium transition-colors px-4 py-2 rounded-lg">About Us</a>
+           <button
+  onClick={() => {
+    navigate("/");
+    setTimeout(() => {
+      document.getElementById("topics")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  }}
+  className="text-slate-600 hover:bg-blue-700 hover:text-white font-medium transition-colors px-4 py-2 rounded-lg"
+>
+  Topics
+</button>
+
+<button
+  onClick={() => {
+    navigate("/");
+    setTimeout(() => {
+      document.getElementById("resources")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  }}
+  className="text-slate-600 hover:bg-blue-700 hover:text-white font-medium transition-colors px-4 py-2 rounded-lg"
+>
+  Resources
+</button>
+
+<button
+  onClick={() => {
+    navigate("/");
+    setTimeout(() => {
+      document.getElementById("about")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  }}
+  className="text-slate-600 hover:bg-blue-700 hover:text-white font-medium transition-colors px-4 py-2 rounded-lg"
+>
+  About Us
+</button>
               <div className="flex items-center space-x-2">
                 <button 
                   onClick={() => onLogin('student')}
@@ -612,18 +650,17 @@ export default function App() {
               />
 
                <Features />
-
-              <section id="topics">
-                <Topics />
-              </section>
-              
-              <section id="resources">
-                <LibrarySection />
-              </section>
-              
-              <section id="about">
-                <About />
-              </section>
+                  <section id="topics">
+                    <Topics />
+                  </section>
+                  
+                  <section id="resources">
+                    <LibrarySection />
+                  </section>
+                  
+                  <section id="about">
+                    <About />
+                  </section>
             </>
           }
         />
