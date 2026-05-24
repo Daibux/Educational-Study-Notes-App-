@@ -61,9 +61,10 @@ const Navbar = ({
         <div className="hidden md:flex items-center gap-2">
           {!isLoggedIn ? (
             <>
-           <button
+         <button
   onClick={() => {
-    navigate("/");
+    onNavigate("home");
+
     setTimeout(() => {
       document.getElementById("topics")?.scrollIntoView({
         behavior: "smooth",
@@ -77,7 +78,8 @@ const Navbar = ({
 
 <button
   onClick={() => {
-    navigate("/");
+    onNavigate("home");
+
     setTimeout(() => {
       document.getElementById("resources")?.scrollIntoView({
         behavior: "smooth",
@@ -91,7 +93,8 @@ const Navbar = ({
 
 <button
   onClick={() => {
-    navigate("/");
+    onNavigate("home");
+
     setTimeout(() => {
       document.getElementById("about")?.scrollIntoView({
         behavior: "smooth",
@@ -597,32 +600,36 @@ export default function App() {
     window.scrollTo(0, 0);
   };
 
-  const handleNavigate = (page: string) => {
-    switch (page) {
-      case 'dashboard':
-        navigate('/dashboard');
-        break;
+ const handleNavigate = (page: string) => {
+  switch (page) {
+    case 'home':
+      navigate('/');
+      break;
 
-      case 'library':
-        navigate('/library');
-        break;
+    case 'dashboard':
+      navigate('/dashboard');
+      break;
 
-      case 'groups':
-        navigate('/groups');
-        break;
+    case 'library':
+      navigate('/library');
+      break;
 
-      case 'admin-dashboard':
-      case 'admin-content':
-      case 'admin-users':
-        navigate('/admin');
-        break;
+    case 'groups':
+      navigate('/groups');
+      break;
 
-      default:
-        navigate('/');
-    }
+    case 'admin-dashboard':
+    case 'admin-content':
+    case 'admin-users':
+      navigate('/admin');
+      break;
 
-    window.scrollTo(0, 0);
-  };
+    default:
+      navigate('/');
+  }
+
+  window.scrollTo(0, 0);
+};
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
