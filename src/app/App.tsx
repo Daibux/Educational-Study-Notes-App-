@@ -611,10 +611,19 @@ export default function App() {
                 onAdminLogin={() => handleLogin('admin')}
               />
 
-              <Features />
-              <Topics />
-              <LibrarySection />
-              <About />
+               <Features />
+
+              <section id="topics">
+                <Topics />
+              </section>
+              
+              <section id="resources">
+                <LibrarySection />
+              </section>
+              
+              <section id="about">
+                <About />
+              </section>
             </>
           }
         />
