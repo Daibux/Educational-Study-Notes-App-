@@ -68,9 +68,9 @@ const RECENT_TRANSACTIONS = [
 ];
 
 const CUSTOMER_LIST = [
-  { id: 1, name: "Alex Student", email: "alex@university.edu", purchases: 5, total_spent: "₱2,450", status: "Active", joined: "Oct 2023" },
-  { id: 2, name: "Maria Garcia", email: "m.garcia@university.edu", purchases: 3, total_spent: "₱950", status: "Active", joined: "Sep 2023" },
-  { id: 3, name: "James Wilson", email: "j.wilson@university.edu", purchases: 12, total_spent: "₱5,100", status: "Premium", joined: "Nov 2023" },
+  { id: 1, name: "Alex Student", email: "alex@university.edu", purchases: 5, total_spent: "₱245.00", status: "Active", joined: "Oct 2023" },
+  { id: 2, name: "Maria Garcia", email: "m.garcia@university.edu", purchases: 3, total_spent: "₱147.00", status: "Active", joined: "Sep 2023" },
+  { id: 3, name: "James Wilson", email: "j.wilson@university.edu", purchases: 12, total_spent: "₱588.00", status: "Premium", joined: "Nov 2023" },
   { id: 4, name: "Sarah Lee", email: "s.lee@university.edu", purchases: 0, total_spent: "₱0", status: "Inactive", joined: "Aug 2023" },
 ];
 
